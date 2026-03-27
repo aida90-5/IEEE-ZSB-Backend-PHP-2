@@ -1,12 +1,21 @@
 <?php
-$config = require basePath('config.php');
-$db = new Database($config['database']);
 
-$heading = 'Notes';
-$notes = $db->query('SELECT * FROM notes WHERE id = 1')->fetchAll();
-dd('notes');
-<?php
-view("notes/show.view.php",[
-    'heading'=> 'Show notes',
-    'notes' => $notes,
-]);
+use Core\Database;
+use core\App;
+$db=App::resolve(Database::class);
+
+$currentUserId =25;
+
+
+    $note = $db->query('SELECT * FROM notes WHERE id = id',[
+        'id' => $_GET['id']
+    ])->findorfail();
+    authorize($note['user_id']== $currentUserId);
+
+
+    authorize($note['user_id']== $currentUserId);
+
+    view("notes/show.view.php", [
+        'heading' => 'Show notes',
+        'notes' => $notes,
+    ]);

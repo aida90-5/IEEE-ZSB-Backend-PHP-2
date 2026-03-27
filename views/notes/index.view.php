@@ -1,12 +1,9 @@
-<?php
-require_once dirname(__DIR__) . '/functions.php';
+<?php require ('core/functions.php'); ?>
+<?php require('views/partial/head.php'); ?>
+<?php require('views/partial/nav.php'); ?>
+<?php require('views/partial/banner.php'); ?>
+
 $heading = isset($heading) ? $heading : 'Home';
-require __DIR__ . '/partial/head.php';
-?>
-
-<?php require __DIR__ . '/partial/nav.php'; ?>
-
-<?php require __DIR__ . '/partial/banner.php'; ?>
 
 
 <main>
@@ -24,4 +21,4 @@ require __DIR__ . '/partial/head.php';
     </div>
 </main>
 
-<?php require __DIR__ . '/partial/footer.php'; ?>
+<?php require('views/partial/footer.php'); ?>
