@@ -282,7 +282,7 @@ composer require illuminate/collections
  ./vendor/bin/pest --init
  ```
 
- - Every time you change the autoload section in composer.json, run:
+ - Every time you change the autoload section in composer.json, run :
  ```bash
  composer dump-autoload
  ```
