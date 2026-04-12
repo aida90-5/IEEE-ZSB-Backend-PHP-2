@@ -256,3 +256,37 @@ alias composer='php /c/php/composer.phar'
 # Save and exit
 source ~/.bash_profile
 ```
+# Composer & Autoloading
+```bash
+"autoload": {
+    "psr-4": {
+        "Core\\": "Core/",
+        "Http\\": "Http/"
+    }
+}
+```
+# Install Packages
+```bash
+
+composer require illuminate/collections
+```
+
+# PestPHP (Testing)
+```bash
+
+ composer require pestphp/pest --dev
+
+ ```
+ # Initialization & Testing Workflow
+ ```bash
+ ./vendor/bin/pest --init
+ ```
+
+ - Every time you change the autoload section in composer.json, run:
+ ```bash
+ composer dump-autoload
+ ```
+ - Run your tests
+ ```bash
+ ./vendor/bin/pest
+ ```
