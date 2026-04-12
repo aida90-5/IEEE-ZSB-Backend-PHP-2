@@ -13,7 +13,11 @@ class Router {
         $this->routes[] = [
             'uri' => $uri,
             'controller' => $controller,
+ last-progress
             'method' => $method,
+
+            'method' => $method
+ main
             'middleware'=>null
         ];
         return $this;
@@ -58,7 +62,7 @@ class Router {
                     (new auth)->handle();
                 }*/
 
-                return require BasePath('Http/controllers/'.$route['controller']);
+                return require base_path('Http/controllers/' . $route['controller']);
             }
         }
 
@@ -70,7 +74,11 @@ class Router {
     }
     protected function abort($code = 404) {
         http_response_code($code);
-        require BasePath("views/{$code}.php");
+      require base_path("views/{$code}.php");
+
+    protected function abort($code = 404) {
+        http_response_code($code);
+       require base_path("views/{$code}.php");
         die();
     }
 }
